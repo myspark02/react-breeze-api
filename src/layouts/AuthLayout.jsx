@@ -26,8 +26,7 @@ const AuthLayout = () => {
                 <li>
                   <button
                     onClick={logout}
-                    className="block py-2 pl-3 pr-4 text-white"
-                    aria-current="page"
+                    className="block py-2 pl-3 pr-4 text-white rounded"
                   >
                     Logout
                   </button>

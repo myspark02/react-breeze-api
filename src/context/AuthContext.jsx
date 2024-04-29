@@ -12,8 +12,12 @@ export const AuthProvider = ({ children }) => {
   const csrf = () => axios.get("/sanctum/csrf-cookie");
 
   const getUser = async () => {
-    const { data } = await axios.get("/api/user");
-    setUser(data);
+    try {
+      const { data } = await axios.get("/api/user");
+      setUser(data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const login = async ({ email, password }) => {
@@ -59,7 +63,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, errors, getUser, login, register, logout }}
+      value={{ user, errors, getUser, login, register, logout, csrf }}
     >
       {children}
     </AuthContext.Provider>

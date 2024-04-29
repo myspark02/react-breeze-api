@@ -166,9 +166,9 @@ const Register = () => {
                 Forgot Password?
               </Link>
               <p className="text-base text-[#adadad]">
-                Not a member yet?
-                <Link to="/register" className="text-primary hover:underline">
-                  Sign Up
+                Already member?
+                <Link to="/login" className="text-primary hover:underline">
+                  Sign in
                 </Link>
               </p>
             </div>
